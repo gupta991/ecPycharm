@@ -9,48 +9,49 @@
 ### Aarav Gupta - Submitted Vocareum workspace.
 
 ### MarketDriver.java
-This class is where the program runs from and operates the control flow of the marketplace. The primary purpose of the MarketDriver class is likely to act as the driver or entry point for the application. It may handle user interface interactions, process user inputs, and coordinate communication with the backend logic.
+This class is where the program runs from and operates the control flow of the marketplace. MarketDriver acts as the main entry point and user interface for the application. 
 
-This class works directly with MarketPlace.java. The MarketDriver class may handle user inputs, possibly through graphical user interfaces (GUIs) using Swing components. The interactions include creating accounts, logging in, and performing various actions within the marketplace.
+This class works in tandem with MarketPlace.java. The MarketDriver class may handle user inputs, possibly through graphical user interfaces (GUIs) using Swing components. The interactions include creating accounts, logging in, and performing various actions within the marketplace.
 MarketDriver allows for account management, such as creating a new account, logging in, changing usernames or passwords, and deleting accounts. It also includes the ability to add new stores, add products to stores, change product details, and remove products.
-MarketDriver is important as it controls the overall navigation and flow of the application. 
+MarketDriver is essential as it controls the overall navigation and flow of the application. 
 
 ### MarketPlace.java
-This class works in tandem with MarketDriver.java. Originally all of the control flow of the program was in one class. However, to improve readability large chunks of code were moved to methods in this class. Essentially MarketPlace.java and MarketDriver.java work like a single class. For the functionality, relation to other classes, and testing, view the description of MarketDriver.java
-
-### DataManager.java
-This class stores all the user and market information in a text file so that data is preserved if you select quit program. DataManager methods are called from MarketPlace.java and use the hash maps storing all customers and users. All of the variables within each customer and user object are written to data.txt. This class also takes data.txt and parses through all the information to put all the customer and user objects back into the hash maps with their data saved.
-
-This class' functionality is tested by running the program as intended: selling and buying objects, quitting the program, and seeing if the user login information, store stock, customer carts, and purchases have been saved if you run it again.
+This class works in tandem with MarketDriver.java. The MarketPlace class is the backend component that encapsulates the logic for managing the marketplace operations. It handles communication with the data store, validates user inputs, and executes various actions requested by MarketDriver or other parts of the application. Essentially MarketPlace.java and MarketDriver.java work like a single class.
 
 ### Product.java
-Product objects and the most basic object in this program store the product's seller, store, name, description, quantity, and price. The rest of this class is used to get and set these variables.
+This class represents a product in the system and includes information such as the seller, store, name, description, quantity, and price of the product.
 
-All other classes use and manipulate product objects. Store.java creates these objects which can be shown to customers to buy. Store.java also stores a list of purchased products. Customers can buy products that decrease their quantity.
-
-Product.java itself does not need testing as it simply stores data.
+It also interacts with other classes, maintaining reference to the Seller and Store classes, establishing relationships between products, sellers, and stores. This class is a fundamental building block for managing and representing items.
 
 ### Store.java
-This class is instantiated by a seller and stores an ArrayList of products, purchased products. Most methods within this class manipulate these ArrayLists. Similar to Product.java, this class stores data and logic concerning when that data is manipulated is called in MarketDriver.java and MarketPlace.java. 
+This class represents a store managed by a seller. It contains an ArrayList of products and additional lists to keep track of sales-related information. 
 
-Store.java itself does not need testing as it mostly stores and accesses data. Other methods such as editProduct and calculateOverallSales are simple and manually tested. 
+Store.java itself does not need testing as it mostly stores and accesses data.
 
 ### User.java
-This class is a parent class of Seller and Customer. It is simple and has variables for username, password, and user which can be seller or customer. This class is made so that sellers and customers who extend it also have these variables.
+This class is a parent class of Seller and Customer. The class stores basic information about a user, including their username, password, and user type.
 
-The user object is operated on in MarketDriver.java and MarketPlace.java to log in with the right credentials and carry out the operations of a user.
-
-This class does not need testing as it just ensures that sellers and customers have the necessary attributes.
+Testing is not needed for this class as it only ensures that sellers and customers have the necessary attributes.
 
 ### Seller.java
-The seller class stores and manages an ArrayList of stores. This class stores data, and logic concerning when that data is manipulated is called in in MarketDriver.java and MarketPlace.java. 
+The seller class stores and manages an ArrayList of stores. The primary responsibility of a Seller is to manage one or more stores. The class includes an ArrayList named storeList that keeps track of the stores associated with a seller.
 
-Seller.java itself does not need testing as it mostly stores and accesses data.
+No testing needed for Seller.java
 
 ### Customer.java
-The customer class stores and manages an ArrayList of purchased items and the cart. This class stores data, and logic concerning when that data is manipulated is called in in MarketDriver.java and MarketPlace.java. 
+This class represents a customer in the system and extends the User class. It includes features related to managing a customer's cart, purchased items, and the process of buying items. 
 
-Seller.java itself does not need testing as it mostly stores and accesses data.
+It includes an ArrayList 'cart' that represents the items currently in the customer's shopping cart as well as the purchasedList ArrayList that represents the items that the customer has already purchased.
+
+### Pair.java
+The Pair class is a generic class that can hold a pair of two objects, denoted as first and second.
+
+This class can be used in various scenarios where a pair of objects needs to be stored together, providing a clean and generic way to do so.
+
+### Server.java
+
+
+### ServerThread.java
 
 
 
