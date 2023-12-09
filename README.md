@@ -1,4 +1,4 @@
-# CS180-Project-5
+≤≤# CS180-Project-5
 ### How to compile and run the program. 
 1. Clone code into a text editor or IDE running Java 20.
 2. Compile and run the program.
@@ -49,7 +49,9 @@ The Pair class is a generic class that can hold a pair of two objects, denoted a
 This class can be used in various scenarios where a pair of objects needs to be stored together, providing a clean and generic way to do so.
 
 ### Server.java
+This class is the main server component that handles communication with clients. 
 
+The server maintains two HashMap objects: sellerMap and customerMap. These maps are used to store information about sellers and customers. The serialize method is used to serialize the sellerMap and customerMap objects and save them to files. The deserialize method reads the serialized objects from files and returns an array containing the deserialized sellerMap and customerMap.
 
 ### ServerThread.java
 
